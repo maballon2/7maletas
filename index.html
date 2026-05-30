@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1">&lt;title&gt;Las 7 Maletas de Cualquier Compra&lt;/title&gt;</p>
+<p class="p1">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" /&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>*{box-sizing:border-box;margin:0;padding:0}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4f0;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wrap{width:100%;max-width:620px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.progress-bar{height:5px;background:#e0ddd5;border-radius:4px;margin-bottom:2rem;overflow:hidden}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.progress-fill{height:100%;background:#7F77DD;border-radius:4px;transition:width .45s cubic-bezier(.4,0,.2,1)}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step{display:none;animation:fadeUp .35s ease}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step.active{display:block}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.maleta-badge{display:inline-flex;align-items:center;gap:6px;background:#EEEDFE;color:#534AB7;font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:.75rem;letter-spacing:.05em;text-transform:uppercase}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.maleta-badge i{font-size:14px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.question{font-size:20px;font-weight:600;color:#1a1a1a;margin-bottom:.35rem;line-height:1.4}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sub{font-size:13px;color:#6b6b6b;margin-bottom:1.25rem;line-height:1.5}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-opt{background:#fff;border:1px solid #ddd;border-radius:12px;padding:.9rem;cursor:pointer;transition:border .2s,background .2s;text-align:center}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-opt:hover{background:#f0efff}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-opt.selected{border:2px solid #7F77DD;background:#EEEDFE}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-opt .icon{font-size:24px;margin-bottom:.4rem;color:#7F77DD}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-opt .opt-label{font-size:13px;font-weight:500;color:#1a1a1a;line-height:1.3}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>textarea,input[type=text]{width:100%;border:1px solid #ddd;border-radius:8px;padding:.75rem 1rem;font-size:14px;font-family:inherit;color:#1a1a1a;background:#fff;resize:vertical;margin-bottom:1rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>textarea{min-height:90px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>textarea:focus,input[type=text]:focus{outline:none;border-color:#7F77DD}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.field-label{font-size:12px;color:#6b6b6b;font-weight:600;margin-bottom:6px;display:block;text-transform:uppercase;letter-spacing:.04em}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.field-group{margin-bottom:1rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:.5rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn{padding:.6rem 1.25rem;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;border:1px solid #ddd;background:#fff;color:#1a1a1a;transition:background .15s}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn:hover{background:#f0efff}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn.primary{background:#7F77DD;color:#fff;border-color:#7F77DD}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn.primary:hover{background:#534AB7;border-color:#534AB7}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step-count{font-size:12px;color:#6b6b6b}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-wrap{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 1px 4px rgba(0,0,0,.06)}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.thanks{text-align:center;padding:2.5rem .5rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.thanks .big-icon{font-size:52px;color:#7F77DD;margin-bottom:1rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.thanks h2{font-size:21px;font-weight:600;margin-bottom:.6rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.thanks p{color:#6b6b6b;font-size:14px;line-height:1.6;margin-bottom:1rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:1.25rem 0;text-align:left}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-card{background:#f5f4f0;border-radius:8px;padding:.75rem 1rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-card .s-label{font-size:11px;color:#7F77DD;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.25rem}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-card .s-val{font-size:13px;color:#1a1a1a;line-height:1.4}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@media(max-width:480px){.summary-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:1fr 1fr}}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" id="prog" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card-wrap"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 0: INTRO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step active" id="s0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-briefcase"&gt;&lt;/i&gt; Bienvenido&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;Hola, ¿cómo te llamas?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Estas preguntas me ayudan a entender tu negocio y darte el mejor servicio posible.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="nombre" placeholder="Tu nombre completo..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;Inicio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(1)"&gt;Empezar &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 1: PÚBLICO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-users"&gt;&lt;/i&gt; Maleta 1 — Público&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Quién es tu cliente ideal?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Cuéntame sobre las personas que te compran o a quienes quieres llegar.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Rango de edades&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cards-grid" id="edad-cards"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'edad')"&gt;&lt;div class="opt-label"&gt;18 – 25 años&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'edad')"&gt;&lt;div class="opt-label"&gt;26 – 35 años&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'edad')"&gt;&lt;div class="opt-label"&gt;36 – 50 años&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'edad')"&gt;&lt;div class="opt-label"&gt;50+ años&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Género dominante&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cards-grid" id="genero-cards"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'genero')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-gender-male"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Masculino&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'genero')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-gender-female"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Femenino&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'genero')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-gender-bigender"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Ambos&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Poder adquisitivo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cards-grid" id="poder-cards"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'poder')"&gt;&lt;div class="opt-label"&gt;Bajo&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'poder')"&gt;&lt;div class="opt-label"&gt;Medio&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'poder')"&gt;&lt;div class="opt-label"&gt;Alto&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'poder')"&gt;&lt;div class="opt-label"&gt;Premium&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;¿Dónde viven tus clientes?&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="ubicacion" placeholder="Ej: Lima, toda Latinoamérica, online..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(0)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;1 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(2)"&gt;Siguiente &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 2: PROBLEMA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-alert-circle"&gt;&lt;/i&gt; Maleta 2 — Problema&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Qué problema resuelves?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Lista los principales problemas por los que tus clientes te buscan y elige el más importante.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Lista hasta 3 problemas que resuelves&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="problemas" placeholder="Ej: 1. No tienen tiempo para cocinar&amp;#10;2. Quieren comer saludable&amp;#10;3. Buscan variedad sin salir de casa"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;El problema MÁS importante (elige uno)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="prob-top" placeholder="Escribe aquí el problema principal..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(1)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;2 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(3)"&gt;Siguiente &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 3: SOLUCIÓN --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-bulb"&gt;&lt;/i&gt; Maleta 3 — Solución&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Cómo lo resuelves?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Explica cómo tu producto o servicio soluciona el problema principal de tus clientes.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Tu solución&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="solucion" placeholder="Ej: Ofrezco planes de alimentación personalizados con entrega a domicilio, listos en menos de 30 minutos..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(2)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;3 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(4)"&gt;Siguiente &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 4: DIFERENCIALES --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-star"&gt;&lt;/i&gt; Maleta 4 — Diferenciales&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Por qué eres mejor que tu competencia?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Piensa en lo que haces mejor y especialmente en lo que nadie más en tu mercado está mencionando.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Lista lo que haces mejor que tu competencia&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="diferenciales" placeholder="Ej: Atención personalizada 24/7, garantía extendida, entrega el mismo día..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Diferencial que menos se menciona en tu mercado&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="dif-unico" placeholder="El que nadie más está comunicando..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(3)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;4 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(5)"&gt;Siguiente &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 5: TESTIMONIOS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-quote"&gt;&lt;/i&gt; Maleta 5 — Testimonios&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Qué dicen tus clientes?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Los testimonios generan confianza. Comparte casos de éxito y cómo seguirás recopilándolos.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Clientes o casos de éxito que puedes mostrar&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="testimonios" placeholder="Ej: María aumentó sus ventas un 40% en 2 meses..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;¿Cómo recogerás más testimonios de ahora en adelante?&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cards-grid" id="test-cards"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'testmet')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-message-star"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Encuesta post-venta&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'testmet')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-brand-instagram"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Reseña en redes&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'testmet')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-video"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Video testimonio&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'testmet')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-mail-forward"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Correo directo&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(4)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;5 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(6)"&gt;Siguiente &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 6: OBJECIONES --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-shield-x"&gt;&lt;/i&gt; Maleta 6 — Objeciones&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Por qué NO te comprarían?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Anticipa las dudas o "peros" que tienen tus clientes antes de tomar la decisión de compra.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;¿Cuáles son los "peros" más comunes?&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="objeciones" placeholder="Ej: Es muy caro, no tengo tiempo para aprender, ya lo intenté antes y no funcionó..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;La objeción MÁS importante a superar&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="obj-top" placeholder="El principal freno de compra..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(5)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;6 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="goTo(7)"&gt;Siguiente &lt;i class="ti ti-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 7: GARANTÍA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s7"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="maleta-badge"&gt;&lt;i class="ti ti-shield-check"&gt;&lt;/i&gt; Maleta 7 — Garantía&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;¿Qué garantía ofreces?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;Una buena garantía elimina el riesgo percibido y facilita la decisión de compra.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;Tu garantía para el cliente&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="garantia" placeholder="Ej: Si en 30 días no ves resultados, te devuelvo el 100% de tu dinero sin preguntas..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="field-label"&gt;¿Tu garantía es mejor que la de tu competencia?&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cards-grid" id="gar-cards"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'gar')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-thumb-up"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Sí, claramente&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'gar')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-scale"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Similar&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card-opt" onclick="selectCard(this,'gar')"&gt;&lt;div class="icon"&gt;&lt;i class="ti ti-alert-triangle"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="opt-label"&gt;Aún no, quiero mejorarla&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="goTo(6)"&gt;&lt;i class="ti ti-arrow-left"&gt;&lt;/i&gt; Atrás&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="step-count"&gt;7 / 7&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn primary" onclick="finish()"&gt;Enviar &lt;i class="ti ti-send"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- GRACIAS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step" id="s8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="thanks"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="big-icon"&gt;&lt;i class="ti ti-circle-check"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;¡Listo, &lt;span id="nombre-out"&gt;&lt;/span&gt;!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Recibí tus 7 maletas. Con esta información podré ayudarte a comunicar y vender mucho mejor. Pronto estaré en contacto.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="summary-grid" id="resumen"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:12px;color:#6b6b6b"&gt;¿Tienes algo más que agregar? Escríbeme directamente.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const state={nombre:'',edad:'',genero:'',poder:'',ubicacion:'',problemas:'',probTop:'',solucion:'',diferenciales:'',difUnico:'',testimonios:'',testmet:'',objeciones:'',objTop:'',garantia:'',gar:''};</p>
+<p class="p2"><br></p>
+<p class="p1">function goTo(n){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>collect();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.step').forEach(s=&gt;s.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('s'+n).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const pct=Math.round((Math.max(n-1,0)/7)*100);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('prog').style.width=pct+'%';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.scrollTo({top:0,behavior:'smooth'});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function collect(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const g=id=&gt;document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('nombre'))state.nombre=g('nombre').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('ubicacion'))state.ubicacion=g('ubicacion').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('problemas'))state.problemas=g('problemas').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('prob-top'))state.probTop=g('prob-top').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('solucion'))state.solucion=g('solucion').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('diferenciales'))state.diferenciales=g('diferenciales').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('dif-unico'))state.difUnico=g('dif-unico').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('testimonios'))state.testimonios=g('testimonios').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('objeciones'))state.objeciones=g('objeciones').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('obj-top'))state.objTop=g('obj-top').value;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(g('garantia'))state.garantia=g('garantia').value;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function selectCard(el,key){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.parentElement.querySelectorAll('.card-opt').forEach(c=&gt;c.classList.remove('selected'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.add('selected');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>state[key]=el.querySelector('.opt-label').textContent;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function finish(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>collect();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('nombre-out').textContent=(state.nombre||'cliente').split(' ')[0];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const items=[</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{label:'Público',val:[state.edad,state.genero,state.poder].filter(Boolean).join(' · ')||'—'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{label:'Problema clave',val:state.probTop||state.problemas.split('\n')[0]||'—'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{label:'Solución',val:state.solucion?state.solucion.substring(0,60)+'…':'—'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{label:'Diferencial único',val:state.difUnico||'—'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{label:'Objeción principal',val:state.objTop||'—'},</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{label:'Garantía vs competencia',val:state.gar||'—'},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('resumen').innerHTML=items.map(i=&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="s-label"&gt;${i.label}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="s-val"&gt;${i.val}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.step').forEach(s=&gt;s.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('s8').classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('prog').style.width='100%';</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
